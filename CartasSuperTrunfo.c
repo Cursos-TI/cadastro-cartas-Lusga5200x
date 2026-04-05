@@ -18,6 +18,8 @@ int main()
     float area1, area2;
     float pib1, pib2;
     
+    double densidade_pop1, densidade_pop2;
+    double pib_percapita1,pib_percapita2;
 
 // Área para entrada de dados
 
@@ -38,7 +40,10 @@ int main()
     printf("Digite a quantidade de pontos turísticos da cidade: \n");
     scanf(" %i", &pontos_turistico1);
 
-    printf("\nAgora vamos cadastrar a segunda carta\n");
+    densidade_pop1 = (double) populacao1 / area1;
+    pib_percapita1 = (double) populacao1 / pib1;
+
+    printf("\nVamos cadastrar a segunda carta\n");
 
     printf("\nDigite uma letra para representar o estado: \n");
     scanf(" %c", &estado2);
@@ -53,13 +58,18 @@ int main()
     printf("Digite a PIB da cidade: \n");
     scanf(" %f", &pib2);
     printf("Digite a quantidade de pontos turísticos da cidade: \n");
-    scanf(" %i", &pontos_turistico2);
+    scanf(" %i", &pontos_turistico1);
+
+    densidade_pop2 = (double) populacao2 / area2;
+    pib_percapita2 = (double) populacao2 / pib2;
+
 
 // Área para exibição dos dados da cidade
 
-    printf("\nCarta1: \n\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nNúmero de Pontos Turísticos: %i\n", estado1, codigo1, nome1, populacao1, area1, pib1, pontos_turistico1);
+    printf("\nCarta1: \n\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2fkm²\nPIB: R$%.2f\nNúmero de Pontos Turísticos: %i\nDensidade populacional: %.2f han/km²\nPIB per Capita: R$%.2f\n", estado1, codigo1, nome1, populacao1, area1, pib1, pontos_turistico1, densidade_pop1, pib_percapita1);
 
-    printf("\nCarta2: \n\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2ff\nPIB: %.2f\nNúmero de Pontos Turísticos: %i\n", estado2, codigo2, nome2, populacao2, area2, pib2, pontos_turistico2);
+    printf("\nCarta2: \n\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2fkm²\nPIB: R$%.2f\nNúmero de Pontos Turísticos: %i\nDensidade populacional: %.2f han/km²\nPIB per Capita: R$%.2f\n", estado2, codigo2, nome2, populacao2, area2, pib2, pontos_turistico2, densidade_pop2, pib_percapita2);
+
 
     return 0;
 }
